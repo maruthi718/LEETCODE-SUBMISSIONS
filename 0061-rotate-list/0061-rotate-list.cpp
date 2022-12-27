@@ -29,12 +29,7 @@ public:
         if(k==len)
             return start;
         int rot;
-        if(k>len)
-        {
-            rot=k%len;
-        }
-        else
-            rot=k;
+         rot=k%len;
         if(rot==0)
           return start;
         rot=len-rot; 
