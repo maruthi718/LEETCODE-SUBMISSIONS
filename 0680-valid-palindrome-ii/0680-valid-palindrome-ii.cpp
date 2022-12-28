@@ -14,8 +14,8 @@ public:
             {
                     cnt++;
                     if(cnt>1)
-                        return false;
-                    return check(s,l+1,r) || check(s,l,r-1);
+                    return false;
+                return check(s,l+1,r) || check(s,l,r-1);
             }
         }
         return true;
