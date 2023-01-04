@@ -8,12 +8,12 @@ public:
             return nums[low];
         while(low<=high)
         {
-            mid=(low+high)/2;
-            if(low+1==high) return min(nums[low],nums[high]);
-            if(nums[low]<nums[mid]) low=mid;
+            mid=(low+high)/2; 
+            if(low+1==high) return min(nums[low],nums[high]); 
+            if(nums[high]<nums[mid]) low=mid; 
             else 
-                high=mid;
+                high=mid; 
         }
-        return 0;
+        return 0; 
     }
 };
