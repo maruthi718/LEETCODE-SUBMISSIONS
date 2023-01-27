@@ -1,6 +1,12 @@
 
 class Solution {
 public:
+    static bool cmp(string &a,string &b)
+    {
+        if(a+b > b+a)
+         return true;
+      return false;
+    }
     string largestNumber(vector<int>& nums) {
         int n=nums.size();
         vector<string>ans;
@@ -8,11 +14,7 @@ public:
         {
             ans.emplace_back(to_string(nums[i]));
         }
-        for(int i=0;i<n;i++)
-        {
-            for(int j=i+1;j<n;j++)
-                if(ans[i]+ans[j]<ans[j]+ans[i]) swap(ans[i],ans[j]);
-        }
+       sort(ans.begin(),ans.end(),cmp);
         string res;
         for(int i=0;i<n;i++)
             res+=ans[i];
