@@ -2,7 +2,8 @@ class Solution {
 public:
     int maximumXOR(vector<int>& nums) {
         int res=nums[0];
-        for(int i=1;i<nums.size();i++)
+        int n=nums.size();
+        for(int i=1;i<n;i++)
         {
             res|=nums[i];
         }
