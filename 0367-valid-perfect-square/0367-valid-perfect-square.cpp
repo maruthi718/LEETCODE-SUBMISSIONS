@@ -2,8 +2,7 @@ class Solution {
 public:
     bool isPerfectSquare(int n) {
         if(n==1) return true;
-        
-         int low=1,high=n;
+         int low=1,high=n/2;
         while(low<=high)
         {
             long long int mid=low+(high-low)/2;
