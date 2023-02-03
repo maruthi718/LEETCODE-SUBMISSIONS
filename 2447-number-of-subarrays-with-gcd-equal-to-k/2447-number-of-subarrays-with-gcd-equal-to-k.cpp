@@ -8,7 +8,7 @@ public:
             curr=nums[i];
             for(int j=i;j<n;j++)
             {
-                if(curr%k!=0 && curr>k) break;
+                if(curr%k  || nums[j]%k) break;
                 curr=__gcd(curr,nums[j]);
                 if(curr==k) cnt++;
             }
