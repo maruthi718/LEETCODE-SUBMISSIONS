@@ -6,7 +6,6 @@ public:
         long m=p.size();
         if(n<m)
          return {};
-        int start=0;
         vector<int>mp1(26,0);
         vector<int>mp2(26,0);
         for(int i=0;i<m;i++)
