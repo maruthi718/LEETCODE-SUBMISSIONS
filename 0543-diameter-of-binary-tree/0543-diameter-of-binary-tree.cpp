@@ -12,17 +12,18 @@
 class Solution {
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-        if(root==NULL) return 0;
         int d=0;
-        check(root,d);
+        if(!root) return 0;
+        int k=check(root,d);
         return d;
     }
     int check(TreeNode* root,int &d)
     {
-        if(!root) return 0;
+        if(!root)
+          return 0;
         int l=check(root->left,d);
         int r=check(root->right,d);
         d=max(d,l+r);
-        return max(l,r)+1;
+        return 1+max(l,r);
     }
 };
