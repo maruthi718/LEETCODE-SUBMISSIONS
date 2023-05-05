@@ -13,23 +13,26 @@ class Solution {
 public:
     int sum=0;
     int sumOfLeftLeaves(TreeNode* root) {
-        if(!root) return 0;
-        if(root->left) check(root->left,true);
-        if(root->right) check(root->right,false);
+        if(!root)
+           return 0;
+        if(root->left)
+        check(root->left,true);
+        if(root->right)
+        check(root->right,false);
         return sum;
     }
-    void check(TreeNode* root,bool temp)
+    void check(TreeNode *root,bool temp)
     {
         if(temp && !root->left && !root->right)
         {
             sum+=root->val;
             return;
         }
-        if(!root->left && !root->right)
+         if(!root->left && !root->right)
             return;
         if(root->left)
-            check(root->left,true);
+        check(root->left,true);
         if(root->right)
-            check(root->right,false);
+        check(root->right,false);
     }
 };
