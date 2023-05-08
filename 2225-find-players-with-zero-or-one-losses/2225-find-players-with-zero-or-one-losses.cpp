@@ -1,35 +1,29 @@
 class Solution {
 public:
-    vector<vector<int>> findWinners(vector<vector<int>>& nums) {
-        int n=nums.size();
-        vector<vector<int>>ans;
-        map<int,bool>mp;
-        map<int,int>mp2;
-        for(int i=0;i<n;i++)
+    vector<vector<int>> findWinners(vector<vector<int>>& matches) {
+       map<int,int>m;
+        // sort(matches.begin(),matches.end());
+        for(auto c:matches)
         {
-           mp2[nums[i][1]]--; 
-            if(mp.find(nums[i][0])==mp.end())
-                mp.emplace(nums[i][0],true);
-            if(mp.find(nums[i][1])!=mp.end())
-                mp[nums[i][1]]=false;
-            else
-                mp.emplace(nums[i][1],false);
+            
+            if(m.find(c[0])==m.end())
+            {
+                m[c[0]]=0;
+            }
+            m[c[1]]++;
         }
-        vector<int>temp;
-        for(auto it:mp)
+        vector<vector<int>> ans;
+        vector<int> zero;
+        vector<int> one;
+        for(auto x:m)
         {
-            if(it.second)
-                temp.emplace_back(it.first);
+            if(x.second==0)
+            zero.push_back(x.first);
+            else if(x.second==1)
+            one.push_back(x.first);
         }
-        
-        ans.emplace_back(temp);
-        temp.clear();
-        for(auto it:mp2)
-        {
-            if(it.second==-1)
-                temp.emplace_back(it.first);
-        }
-        ans.emplace_back(temp);
-        return ans;
+       ans.push_back(zero);
+       ans.push_back(one);
+       return ans;
     }
 };
