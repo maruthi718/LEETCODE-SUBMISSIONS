@@ -11,38 +11,30 @@ public:
             if(d%4==0)  
             {
               for(int i=l;i<=r;i++)
-              {
                   ans.push_back(matrix[t][i]);
-              }
                 t++;
-              d++;
+                d++;
             }
            else if(d%4==1)  
             {
               for(int i=t;i<=b;i++)
-              {
                   ans.push_back(matrix[i][r]);
-              }
                 r--;
-              d++;
+                d++;
             }
              else if(d%4==2)  
             {
               for(int i=r;i>=l;i--)
-              {
                   ans.push_back(matrix[b][i]);
-              }
-                 b--;
-              d++;
+                b--;
+                d++;
             }
             else if(d%4==3)  
            {
               for(int i=b;i>=t;i--)
-              {
                   ans.push_back(matrix[i][l]);
-              }
                 l++;
-              d++;
+                d++;
            }
             
         }
