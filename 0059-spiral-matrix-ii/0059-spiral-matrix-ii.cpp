@@ -50,7 +50,7 @@ public:
               }
                  b--;
               d++;
-            }
+            } 
             else if(d%4==3)  
            {
               for(int i=b;i>=t;i--)
@@ -61,7 +61,7 @@ public:
                 l++;
               d++;
            }
-            
+             
         }
         return matrix;
     }
