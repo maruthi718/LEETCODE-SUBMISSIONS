@@ -11,8 +11,10 @@ public:
                 k=s.top();
                 s.pop();
             }
-            s.push(nums[i]);
+               
+                s.push(nums[i]);
         }
-        return false;
-    }
+        return false; 
+    } 
 };
+
