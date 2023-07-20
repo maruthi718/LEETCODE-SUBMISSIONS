@@ -18,9 +18,9 @@ public:
                         s.pop();
                         if(!s.empty() && abs(nums[i])==s.top())
                         {
-                            s.pop();
-                            flag=1;
-                            break;
+                            s.pop();  
+                            flag=1;    
+                            break;   
                         }
                         if(!s.empty() && s.top()<0) 
                         {
@@ -43,6 +43,6 @@ public:
             s.pop();
         }
             reverse(ans.begin(),ans.end());
-        return ans;
+        return ans; 
     }
 };
