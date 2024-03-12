@@ -11,36 +11,36 @@
 class Solution {
 public:
     ListNode* removeNodes(ListNode* head) {
-        if(head==nullptr || head->next==nullptr) return head;
-        stack<ListNode*>s;
-         ListNode* prev=nullptr;
-        ListNode* temp=head;
-        while(temp!=nullptr)
+        ListNode* prev=NULL,*temp=head,*ans;
+        while(temp!=NULL)
         {
             temp=head->next;
             head->next=prev;
             prev=head;
             head=temp;
         }
-        s.push(prev);
-        prev=prev->next;
-       while(prev!=nullptr)
-       {
-          if(prev->val >= s.top()->val)
-              s.push(prev);
-           prev=prev->next;
-       }
-       ListNode* curr=s.top();
-        ListNode* ans=s.top();
+        head=prev;
+        stack<ListNode*>s;
+        s.push(head);
+        head=head->next;
+        while(head!=nullptr)
+        {
+           if(s.top()->val <= head->val) 
+           {
+             s.push(head) ;
+           }
+            head=head->next;
+        }
+        head=s.top();
+        ans=head;
         s.pop();
         while(!s.empty())
         {
-            curr->next=s.top();
-            curr=s.top();
+            head->next=s.top();
+            head=s.top();
             s.pop();
         }
-        curr->next=nullptr;
+        head->next=nullptr;
         return ans;
     }
 };
-
