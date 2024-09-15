@@ -14,7 +14,6 @@ public:
             else
                 v.emplace_back(a[end]^a[start-1]); 
         }
-        return v;       
+        return v;   
     }
 };
-
